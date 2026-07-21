@@ -21,7 +21,7 @@ This pipeline is built to leverage parallel Monte Carlo computing power on any s
 
 ## Requirements
 * **An NVIDIA GPU:** Required to run parallel photon-tracking simulation cores via CUDA.
-* **A Gemini API Key:** Generated for free via Google AI Studio.
+* **A Groq API Key:** Required for fast LLM parameter translation via Llama 3.3 (available for free via the Groq Console).
 * **The Constraints:** The `skill.md` file included in this repository must remain in the root directory for the AI parameters to validate correctly.
 
 ###  Recommended: Google Colab Quickstart (Fastest Setup)
@@ -30,9 +30,9 @@ This pipeline is built to leverage parallel Monte Carlo computing power on any s
 1. Launch a clean notebook in **Google Colab** and switch your hardware accelerator type to **T4 GPU** (*Runtime > Change runtime type > T4 GPU*).
 2. Install the containerized pipeline dependencies directly inside a terminal cell:
    ```bash
-   pip install -q -U google-genai gradio pmcx numpy
+  pip install -q -U groq gradio pmcx numpy
    ```
-3. Click the **Key icon** (Secrets panel) on the left sidebar, add a new secret named `GOOGLE_API_KEY`, paste your token, and enable notebook access.
+3. Click the **Key icon** (Secrets panel) on the left sidebar, add a new secret named `GROQ_API_KEY`, paste your token, and enable notebook access.
 4. Open the file drawer on the left side and upload your custom `skill.md` rulebook file directly into the main workspace folder.
 5. Paste the complete pipeline Python script into your code cell and run it. Click the public `.gradio.live` tunnel link generated at the bottom of your console log to open your portal dashboard in any browser!
 
@@ -46,12 +46,12 @@ Because the codebase is built entirely on standard, modular Python packages, mig
    ```bash
    git clone https://github.com
    cd PhotonSimLink
-   pip install google-genai gradio pmcx numpy
+   pip install -q -U groq gradio pmcx numpy
    ```
 
-2. **Save your Gemini token directly to your operating system environment variables:**
-   * **Linux/macOS:** `export GOOGLE_API_KEY="your-key-here"`
-   * **Windows CMD:** `set GOOGLE_API_KEY="your-key-here"`
+2. **Save your Groq token directly to your operating system environment variables:**
+   * **Linux/macOS:** `export GROQ_API_KEY="your-key-here"`
+   * **Windows CMD:** `set GROQ_API_KEY="your-key-here"`
 
 3. **Execute the native script loop:**
    ```bash
@@ -67,7 +67,7 @@ Because the codebase is built entirely on standard, modular Python packages, mig
 
 2. **Open Firewall Routing:** Navigate to your GCP Firewall configurations and create an opening rule setting targets to *all instances*, source IP ranges to `0.0.0.0/0`, and allow `tcp:7860`.
 
-3. **Initialize and Serve:** SSH into your virtual machine, clone this repository, export your system `GOOGLE_API_KEY`, and execute `python main.py`.
+3. **Initialize and Serve:** SSH into your virtual machine, clone this repository, export your`GROQ_API_KEY`, and execute `python main.py`.
 
 4. **Access the web interface:**
    Open any browser window and navigate directly to your cloud server's external address: `http://<YOUR_VM_EXTERNAL_IP>:7860`
