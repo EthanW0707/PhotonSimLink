@@ -30,7 +30,7 @@ This pipeline is built to leverage parallel Monte Carlo computing power on any s
 1. Launch a clean notebook in **Google Colab** and switch your hardware accelerator type to **T4 GPU** (*Runtime > Change runtime type > T4 GPU*).
 2. Install the containerized pipeline dependencies directly inside a terminal cell:
    ```bash
-  pip install -q -U groq gradio pmcx numpy
+   pip install -q -U groq gradio pmcx numpy
    ```
 3. Click the **Key icon** (Secrets panel) on the left sidebar, add a new secret named `GROQ_API_KEY`, paste your token, and enable notebook access.
 4. Open the file drawer on the left side and upload your custom `skill.md` rulebook file directly into the main workspace folder.
