@@ -73,3 +73,13 @@ Because the codebase is built entirely on standard, modular Python packages, mig
    Open any browser window and navigate directly to your cloud server's external address: `http://<YOUR_VM_EXTERNAL_IP>:7860`
 
 
+## Project Status & Roadmap
+**PhotonSimLink** is currently under active development. The core architecture, 3D simulation pipeline, and Groq Llama 3.3 translation layer are currently being refined and tested. 
+
+- [x] Natural language prompt translation via Groq Llama 3.3
+- [x] Safety validation layer (`skill.md` constraint checks)
+- [x] NVIDIA GPU execution pipeline (`pmcx.mcxlab()`)
+- [ ] Final UI polish and automated regression testing *(Current Focus)*
+- [ ] Full source code release and stable tag
+
+
