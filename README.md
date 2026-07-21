@@ -33,7 +33,7 @@ This pipeline is built to leverage parallel Monte Carlo computing power on any s
    pip install -q -U groq gradio pmcx numpy
    ```
 3. Click the **Key icon** (Secrets panel) on the left sidebar, add a new secret named `GROQ_API_KEY`, paste your token, and enable notebook access.
-4. Open the file drawer on the left side and upload your custom `skill.md` rulebook file directly into the main workspace folder.
+4. Open the file drawer on the left side and upload the `skill.md` file included in this repository directly into the main workspace folder.
 5. Paste the complete pipeline Python script into your code cell and run it. Click the public `.gradio.live` tunnel link generated at the bottom of your console log to open your portal dashboard in any browser!
 
 ## Future Migration/Scalability Options
