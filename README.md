@@ -72,6 +72,9 @@ Because the codebase is built entirely on standard, modular Python packages, mig
 4. **Access the web interface:**
    Open any browser window and navigate directly to your cloud server's external address: `http://<YOUR_VM_EXTERNAL_IP>:7860`
 
+## CPU Fallback/Development Mode
+While actual simulation runs require a dedicated NVIDIA GPU for high-performance CUDA parallel processing, the codebase includes an automatic CPU fallback fixture. This is designed specifically for local development, testing, and migration when hardware accelerators aren't available.
+
 
 ## Project Status & Roadmap
 **PhotonSimLink** is currently under active development. The core architecture, 3D simulation pipeline, and Groq Llama 3.3 translation layer are currently being refined and tested. 
@@ -79,7 +82,9 @@ Because the codebase is built entirely on standard, modular Python packages, mig
 - [x] Natural language prompt translation via Groq Llama 3.3
 - [x] Safety validation layer (`skill.md` constraint checks)
 - [x] NVIDIA GPU execution pipeline (`pmcx.mcxlab()`)
-- [ ] Final UI polish and automated regression testing *(Current Focus)*
+- [x] Offline CPU mock mode and fallback fixture for hardware-free development
+- [ ] Conversational ambiguity handler *(Prompt users for missing details when generic requests lack target parameters) (Current Focus)*
+- [ ] Final UI polish and automated regression testing
 - [ ] Full source code release and stable tag
 
 
