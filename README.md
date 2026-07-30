@@ -7,7 +7,7 @@ In medical device development, testing how lasers interact with human skin requi
 
 ## How It Works (The 3-Step Pipeline)
 * **1. Human-to-Math Translation:** The system takes your plain English text and maps it against a standardized rulebook (`skill.md`) to figure out the exact numbers needed for skin absorption, light scattering, and laser positioning.
-* **2. Dynamic VTS Physics Engine (`pVTS`):** Instead of static lookups, the system feeds those configurations into modular Python ports of VTS components—specifically `chrom_absorber` and `PowerLawScatterer`—to dynamically calculate exact optical properties.
+* **2. Dynamic VTS Physics Engine (`pVTS`):** Instead of static lookups, the system feeds those configurations into modular Python ports of VTS components to dynamically calculate exact optical properties.
 * **3. Real Hardware Test & Report:** The validated numbers are fed straight into a 3D digital tissue grid on an NVIDIA graphics card. The system measures exactly where the light waves travel, catches the real calculation results, and hands them back to you in a clean, easy-to-read report.
 
 ## Key Problems This Solves
@@ -15,6 +15,7 @@ In medical device development, testing how lasers interact with human skin requi
 * **No More Serialization Crashes:** Fixed a glitch where the computer's raw matrix indices were clashing with Python's standard text converter, causing the application to crash.
 * **Zero Boundary Wall Errors:** Patched a bug where launching the laser at the exact outer boundary wall caused the light simulation to instantly glitch out and return blank data (`nan` or Not a Number).
 * **Accurate Beam Tracking:** Upgraded the tracking math to measure the laser light directly down its central core path instead of watering it down by averaging it with empty surrounding space.
+
 
 ## How to Run It (Deployment Options)
 This pipeline is built to leverage parallel Monte Carlo computing power on any system utilizing an NVIDIA GPU. For this phase of the project, **Google Colab** is utilized as the primary, no-config sandbox for development and testing.
